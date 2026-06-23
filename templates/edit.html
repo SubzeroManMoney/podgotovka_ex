@@ -5,6 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-
+    <form method="post">
+    {% csrf_token %}
+            <input type="text" value="{{ client.secondname }}" name="secondname">
+            <p></p>
+            <input type="text" value="{{ client.firstname }}" name="firstname">
+            <p></p>
+            <input type="text" value="{{ client.phone }}" name="phone">
+            <p></p>
+            <input type="date" value="{{ client.bday|date:"Y-m-d" }}" name="bday">
+            <p></p>
+            <input type="text" value="{{ client.gender }}" name="gender">
+            <p></p>
+            <input type="text" value="{{ client.category }}" name="category">
+            <p></p>
+        <button type="submit">Подтвердить</button>
+    </form>
 </body>
 </html>
