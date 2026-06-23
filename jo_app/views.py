@@ -33,6 +33,11 @@ def tables(request):
     if request.GET.get('edit') is not None:
         request.session['edit_id'] = request.GET.get('edit')
         return redirect('edit')
+    if request.GET.get('delete') is not None:
+        delete_obj = get_object_or_404(Clients, id=request.GET.get('delete'))
+        delete_obj.delete()
+    if request.GET.get('add') is not None:
+        return redirect('add')
 
     search = request.GET.get('search', '')
     tabless = Clients.objects.all()
@@ -65,3 +70,19 @@ def edit(request):
         return redirect('tables')
 
     return render(request, 'edit.html', context)
+
+def add(request):
+    if request.method == 'POST':
+        new_client = Clients(
+            id=request.POST.get('id_add'),
+            secondname=request.POST.get('secondname_add'),
+            firstname = request.POST.get('firstname_add'),
+            phone = request.POST.get('phone_add'),
+            bday = request.POST.get('bday_add'),
+            gender = request.POST.get('gender_add'),
+            category = request.POST.get('category_add')
+        )
+        new_client.save()
+        return redirect('tables')
+
+    return render(request, 'add.html')

@@ -23,5 +23,6 @@ urlpatterns = [
     path('', views.index, name='login'),
     path('tables/', views.tables, name='tables'),
     path('tables/edit/', views.edit, name='edit'),
+    path('tables/add/', views.add, name='add'),
     #path()
 ]

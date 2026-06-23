@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Добавление</title>
 </head>
 <body>
     <form method="post">
     {% csrf_token %}
-            <input type="text" value="{{ client.secondname }}" name="secondname">
+            <input type="text" placeholder="ID" name="id_add">
             <p></p>
-            <input type="text" value="{{ client.firstname }}" name="firstname">
+            <input type="text" placeholder="Фамилия" name="secondname_add">
             <p></p>
-            <input type="text" value="{{ client.phone }}" name="phone">
+            <input type="text" placeholder="Имя" name="firstname_add">
             <p></p>
-            <input type="date" value="{{ client.bday|date:"Y-m-d" }}" name="bday">
+            <input type="text" placeholder="Телефон" name="phone_add">
             <p></p>
-            <input type="text" value="{{ client.gender }}" name="gender">
+            <input type="date" name="bday_add">
             <p></p>
-            <input type="text" value="{{ client.category }}" name="category">
+            <input type="text" placeholder="Гендер" name="gender_add">
             <p></p>
-        <button type="submit">Подтвердить</button>
+            <input type="text" placeholder="Категория" name="category_add">
+            <p></p>
+        <button type="submit">+ Добавить</button>
     </form>
 </body>
 </html>
