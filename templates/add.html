@@ -7,19 +7,19 @@
 <body>
     <form method="post">
     {% csrf_token %}
-            <input type="text" placeholder="ID" name="id_add">
+            <input type="text" placeholder="ID" name="id_add" required>
             <p></p>
-            <input type="text" placeholder="Фамилия" name="secondname_add">
+            <input type="text" placeholder="Фамилия" name="secondname_add" required>
             <p></p>
-            <input type="text" placeholder="Имя" name="firstname_add">
+            <input type="text" placeholder="Имя" name="firstname_add" required>
             <p></p>
-            <input type="text" placeholder="Телефон" name="phone_add">
+            <input type="text" placeholder="Телефон" name="phone_add" required>
             <p></p>
-            <input type="date" name="bday_add">
+            <input type="date" name="bday_add" required>
             <p></p>
-            <input type="text" placeholder="Гендер" name="gender_add">
+            <input type="text" placeholder="Гендер" name="gender_add" required>
             <p></p>
-            <input type="text" placeholder="Категория" name="category_add">
+            <input type="text" placeholder="Категория" name="category_add" required>
             <p></p>
         <button type="submit">+ Добавить</button>
     </form>

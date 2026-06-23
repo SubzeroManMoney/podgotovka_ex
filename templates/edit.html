@@ -7,17 +7,17 @@
 <body>
     <form method="post">
     {% csrf_token %}
-            <input type="text" value="{{ client.secondname }}" name="secondname">
+            <input type="text" value="{{ client.secondname }}" name="secondname" required>
             <p></p>
-            <input type="text" value="{{ client.firstname }}" name="firstname">
+            <input type="text" value="{{ client.firstname }}" name="firstname" required>
             <p></p>
-            <input type="text" value="{{ client.phone }}" name="phone">
+            <input type="text" value="{{ client.phone }}" name="phone" required>
             <p></p>
-            <input type="date" value="{{ client.bday|date:"Y-m-d" }}" name="bday">
+            <input type="date" value="{{ client.bday|date:"Y-m-d" }}" name="bday" required>
             <p></p>
-            <input type="text" value="{{ client.gender }}" name="gender">
+            <input type="text" value="{{ client.gender }}" name="gender" required>
             <p></p>
-            <input type="text" value="{{ client.category }}" name="category">
+            <input type="text" value="{{ client.category }}" name="category" required>
             <p></p>
         <button type="submit">Подтвердить</button>
     </form>
