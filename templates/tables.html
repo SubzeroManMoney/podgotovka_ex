@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблицы</title>
+    <style>
+        th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="search">
+        <button type="submit">Поиск</button>
+    </form>
+    <p></p>
+    <table border="1px">
+        <tr><th>Фамилия</th><th>Имя</th><th>Телефон</th><th>День рождения</th><th>Гендер</th><th>Категория</th>
+        {% if isadmin %}<th>Действия</th>{% endif %}</tr>
+        {% for client in clients %}
+        <tr>
+            <td>{{ client.secondname }}</td>
+            <td>{{ client.firstname }}</td>
+            <td>{{ client.phone }}</td>
+            <td>{{ client.bday }}</td>
+            <td>{{ client.gender }}</td>
+            <td>{{ client.category }}</td>
+            {% if isadmin %}<td>
+                <form method="get">
+                    <button type="submit" name="edit" value={{ client.id }}>Ред.</button>
+                    <button type="submit" name="delete" value={{ client.id }}>Удалить</button>
+                </form>
+            </td>{% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <p></p>
+    {% if isadmin %}
+    <form>
+        <button type="submit" name="add" value="add">+ Добавить запись</button>
+    </form>
+        <p></p>
+    {% endif %}
+    <form>
+        <button type="submit" name="back" value="true">Назад</button>
+    </form>
+</body>
+</html>
